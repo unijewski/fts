@@ -53,3 +53,6 @@ gem 'bootstrap-sass'
 group :development do
   gem 'rails_layout'
 end
+
+# Devise
+gem 'devise'
