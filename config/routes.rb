@@ -1,16 +1,15 @@
 Warsztaty::Application.routes.draw do
-  resources :articles
-
-  devise_for :users
-  root :to => "dashboard#home"
-  
-  get "dashboard/home"
-
   resources :articles do
     collection do
       get :populate
     end
   end
+  
+  devise_for :users
+  root :to => "dashboard#home"
+  
+  get "dashboard/home"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
