@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Seeding admin user"
+admin = User.find_or_initialize_by_email("admin@test.com")
+if admin.new_record?
+  admin.password = "password"
+  admin.password_confirmation = "password"
+  admin.save!
+end
+puts "Done!"
