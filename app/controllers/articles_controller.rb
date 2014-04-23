@@ -61,6 +61,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def populate
+    articles = Article.title_matches(params[:q])
+    render :json => articles, :callback => params[:callback]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -69,6 +74,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params[:article]
     end
 end
