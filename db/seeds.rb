@@ -14,3 +14,9 @@ if admin.new_record?
   admin.save!
 end
 puts "Done!"
+
+puts 'ROLES'
+["admin", "user"].each do |role|
+  Role.find_or_create_by_name(role)
+  puts 'role: ' << role
+end

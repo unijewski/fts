@@ -56,3 +56,10 @@ end
 
 # Devise
 gem 'devise'
+
+# User authentication
+gem 'cancan'
+gem 'rolify'
+
+# FTS
+gem 'tire'
