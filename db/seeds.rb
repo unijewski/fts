@@ -20,3 +20,14 @@ puts 'ROLES'
   Role.find_or_create_by_name(role)
   puts 'role: ' << role
 end
+
+unless Article.count > 0
+  100.times do |i|
+    Article.transaction do
+      article = Article.new
+      article.title = Faker::Lorem.words(5).join(" ")
+      article.content = Faker::Lorem.paragraphs.join
+      article.save!
+    end
+  end
+end

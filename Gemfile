@@ -63,3 +63,5 @@ gem 'rolify'
 
 # FTS
 gem 'tire'
+gem 'faker'
+gem 'textacular', '~> 3.0'
